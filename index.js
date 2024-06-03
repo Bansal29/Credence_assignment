@@ -1,7 +1,7 @@
 //Credence assignment_ Aryan-Bansal
 const express = require("express");
 const mongoose = require("mongoose");
-
+require("dotenv").config();
 const app = express();
 const port = 8000;
 
@@ -9,7 +9,7 @@ const port = 8000;
 app.use(express.json());
 
 // Connect to MongoDB
-mongoose.connect("mongodb://localhost:27017/Credence", {
+mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
